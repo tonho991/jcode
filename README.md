@@ -1,7 +1,7 @@
 # JCode
 Find Gradle Libraries
 
-## 📜 Suports 
+## 📜 Supports 
   - Google Maven
   - Maven2
   - JFrog
@@ -11,15 +11,15 @@ Find Gradle Libraries
 
 ## 📥 Install & Run
 
-- Download repo
+- Download the repositorie:
 
-```
-git clone ttps://github.com/tonho991/jcode
+```sh
+git clone https://github.com/tonho991/jcode
 ```
 
-- Run
+- Run:
 
-```
+```sh
 npm run start
 ```
 
