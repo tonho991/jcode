@@ -26,7 +26,7 @@ npm run start
 ## 📔 API Docs
 
 ### Endpoints 
-  #### Search Dependencie
+  #### Search Dependency
   - URL: ```/api/search-lib```
   - Method: POST
   - Params
