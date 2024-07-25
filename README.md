@@ -11,7 +11,7 @@ Find Gradle Libraries
 
 ## 📥 Install & Run
 
-- Download the repositorie:
+- Download the repository:
 
 ```sh
 git clone https://github.com/tonho991/jcode
