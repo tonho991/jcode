@@ -1,9 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const fs = require("fs")
-
+const fs = require("fs");
 
 const app = express();
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
         extended: true
@@ -11,14 +11,13 @@ app.use(bodyParser.urlencoded({
 
 app.use((req, res, next)=>{
    if(req.path.includes("/api/")){
-        next();   
+      next();   
    } else if(req.path.includes("/vgbuild-docs")){
       res.set("Content-type", "text/html");
-    res.status(200).send(fs.readFileSync("./src/documentation.html"))
-   
+      res.status(200).send(fs.readFileSync("./src/documentation.html"))
    }else{
-        res.set("Content-type", "text/html");
-        res.status(200).send(fs.readFileSync("./src/home.html"))
+      res.set("Content-type", "text/html");
+      res.status(200).send(fs.readFileSync("./src/home.html"))
    }
 })
 
@@ -28,15 +27,14 @@ function getRoutes(path) {
         fs.readdirSync(path).forEach(function(file) {
                 const stats = fs.lstatSync(`${path}/${file}`);
                 if (stats.isDirectory()) {
-                        getRoutes(`${path}/${file}`);
+                   getRoutes(`${path}/${file}`);
                 } else {
-                        const route = require(`${path}/${file}`);
-                        app.use(route.route, route.app);
+                   const route = require(`${path}/${file}`);
+                   app.use(route.route, route.app);
                 }
         });
 }
 
-app.listen(3000,
-        () => {
-                console.log(`Servidor funfando.`);
-        });
+app.listen(3000, () => {
+    console.log("[Server Online | Port: 3000]");
+});
